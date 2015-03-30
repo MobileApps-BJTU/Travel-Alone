@@ -78,8 +78,8 @@ public class ArticleDetailRead extends Fragment {
         Object object1 = map.get("content");
         readContext.setText((String)object1);
 
-        Object object2 = map.get("img");
-        readImage.setImageResource((int)object2);
+//        Object object2 = map.get("img");
+//        readImage.setImageResource((int)object2);
         return view;
     }
 
