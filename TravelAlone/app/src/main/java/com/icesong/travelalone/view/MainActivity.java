@@ -2,11 +2,9 @@ package com.icesong.travelalone.view;
 
 import android.app.Activity;
 import android.net.Uri;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.SimpleAdapter;
 
 import com.icesong.travelalone.R;
@@ -34,7 +32,7 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         setContentView(R.layout.activity_main);
 
         getFragmentManager().beginTransaction()
-                .add(R.id.fragment_holder, new ArticleTitleItem()).commit();
+                .add(R.id.fragment_holder, new ArticleWritten()).commit();
 
         adapter = new SimpleAdapter(this, getArticleDataList(), R.layout.article_item_list,
 
@@ -42,6 +40,10 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
                 new int[]{R.id.article_item_list_title, R.id.article_item_list_detail, R.id.article_item_list_origin,
                         R.id.article_item_list_author, R.id.article_item_list_comments, R.id.imageView});
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/prototype
     }
 
 
@@ -83,6 +85,7 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
     @Override
     public void OpenArticleDetailRead(int position) {
+<<<<<<< HEAD
         getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleDetailRead().newInstance(position)).addToBackStack(null).commit();
         //getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
     }
@@ -115,17 +118,24 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 //        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_015);
 //        articleDataList.add(map);
 
+=======
+        //getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleDetailRead().newInstance()).addToBackStack(null).commit();
+        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
+    }
+
+    public List<Map<String, Object>> getArticleDataList() {
+>>>>>>> origin/prototype
         return articleDataList;
     }
 
     public void setArticleDataList(Articles anArticle){
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("title", "articl23131e1");
-        map.put("content", "cont121313ent1");
-        map.put("origin", "origin1");
-        map.put("author", "author1");
-        map.put("comment", "comment1");
-        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_000);
+        map.put("title", anArticle.getmArticleName());
+        map.put("content", anArticle.getmArticleContent());
+        map.put("origin", anArticle.setArticleOrigin());
+        map.put("author", anArticle.getmArticleAuthor());
+        map.put("comment", anArticle.getmArticleComments().length);
+        map.put("img", anArticle.getmArticlePhotos());
 
         articleDataList.add(map);
     }

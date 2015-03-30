@@ -23,6 +23,7 @@ import com.icesong.travelalone.model.Articles;
 public class ArticleWritten extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    MainActivity mainActivity;
     Articles newArticle = new Articles();
 
     public ArticleWritten() {
@@ -36,6 +37,7 @@ public class ArticleWritten extends Fragment {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_article_written, container, false);
         View articleWritingView = inflater.inflate(R.layout.fragment_article_written, container, false);
+        mainActivity = (MainActivity)getActivity();
 
         final ImageView saveImageView = (ImageView)articleWritingView.findViewById(R.id.writingArticleSave);
         ImageView addPhotoImageView = (ImageView)articleWritingView.findViewById(R.id.writingArticleAddPhotos);
@@ -55,12 +57,13 @@ public class ArticleWritten extends Fragment {
                             Toast.LENGTH_SHORT).show();
                     saveImageView.setAlpha(255);
                 }else{
-
+                    newArticle.setmArticleName(articleTitleEditText.getText().toString());
+                    newArticle.setmArticleContent(articleContentEditText.getText().toString());
+                    mainActivity.setArticleDataList(newArticle);
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleTitleItem()).addToBackStack(null).commit();
                 }
-
             }
         });
-
         return articleWritingView;
     }
 
