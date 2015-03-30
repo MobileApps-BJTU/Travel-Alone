@@ -10,8 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 
 import com.icesong.travelalone.R;
+import com.icesong.travelalone.model.Articles;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -23,14 +30,9 @@ import com.icesong.travelalone.R;
 public class ArticleTitleItem extends ListFragment {
 
     private OnFragmentInteractionListener mListener;
+    private MainActivity mainActivity;
 
-    private static String[] listItems = {
-            "1",
-            "2",
-            "3",
-            "4",
-            "7"
-    };
+
 
     public ArticleTitleItem() {
         // Required empty public constructor
@@ -42,10 +44,12 @@ public class ArticleTitleItem extends ListFragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        ArrayAdapter<String> list = new ArrayAdapter<String>(
-                getActivity(), R.layout.article_item_list,R.id.article_item_list_title,listItems
-        );
-        setListAdapter(list);
+//        ArrayAdapter<String> list = new ArrayAdapter<String>(
+//                getActivity(), R.layout.article_item_list,R.id.article_item_list_title,listItems
+//        );
+        mainActivity = (MainActivity)getActivity();
+        setListAdapter(mainActivity.getAdapter());
+//        setListAdapter((MainActivity)getActivity().get);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_article_title_item, container, false);
     }
@@ -97,5 +101,6 @@ public class ArticleTitleItem extends ListFragment {
 
         void OpenArticleDetailRead(int position);
     }
+
 
 }

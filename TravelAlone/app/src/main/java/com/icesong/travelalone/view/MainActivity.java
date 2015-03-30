@@ -7,10 +7,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.SimpleAdapter;
 
 import com.icesong.travelalone.R;
 import com.icesong.travelalone.model.Articles;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 
@@ -18,6 +23,11 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
     Stack<Articles> articleStack;
     ArrayAdapter<Articles> articlesArrayAdapter;
+    private SimpleAdapter adapter;
+
+    public SimpleAdapter getAdapter() {
+        return adapter;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,13 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         articlesArrayAdapter = new ArrayAdapter<Articles>(
                 this, R.layout.article_item_list,R.id.article_item_list_title,articleStack
         );
+
+        adapter = new SimpleAdapter(this,getData(),R.layout.article_item_list,
+
+                new String[]{"title","content","origin","author","comment","img"},
+
+                new int[]{R.id.article_item_list_title,R.id.article_item_list_detail,R.id.article_item_list_origin,
+                        R.id.article_item_list_author,R.id.article_item_list_comments,R.id.imageView });
 
     }
 
@@ -73,9 +90,40 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
     @Override
     public void OpenArticleDetailRead(int position) {
-        String d = "d";
-        String a = "d";
         //getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleDetailRead().newInstance(d,a)).addToBackStack(null).commit();
         getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
+    }
+
+    public List<Map<String,Object>> getData(){
+        List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
+
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("title","article1");
+        map.put("content","content1");
+        map.put("origin","origin1");
+        map.put("author","author1");
+        map.put("comment","comment1");
+        map.put("img",R.drawable.abc_btn_check_to_on_mtrl_000);
+        list.add(map);
+
+        map = new HashMap<String,Object>();
+        map.put("title","article2");
+        map.put("content","content2");
+        map.put("origin","origin2");
+        map.put("author","author2");
+        map.put("comment","comment2");
+        map.put("img",R.drawable.abc_btn_radio_material);
+        list.add(map);
+
+        map = new HashMap<String,Object>();
+        map.put("title","article3");
+        map.put("content","content3");
+        map.put("origin","origin3");
+        map.put("author","author3");
+        map.put("comment","comment3");
+        map.put("img",R.drawable.abc_btn_check_to_on_mtrl_015);
+        list.add(map);
+
+        return list;
     }
 }

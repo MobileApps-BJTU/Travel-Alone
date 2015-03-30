@@ -1,7 +1,6 @@
 package com.icesong.travelalone.view;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -13,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.icesong.travelalone.R;
-import com.icesong.travelalone.model.Articles;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,7 +22,6 @@ import com.icesong.travelalone.model.Articles;
 public class ArticleWritten extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    private Articles wArticle;
 
     public ArticleWritten() {
         // Required empty public constructor
@@ -38,8 +35,6 @@ public class ArticleWritten extends Fragment {
         //return inflater.inflate(R.layout.fragment_article_written, container, false);
         View articleWritingView = inflater.inflate(R.layout.fragment_article_written, container, false);
 
-        wArticle = new Articles();
-
         final ImageView saveImageView = (ImageView)articleWritingView.findViewById(R.id.writingArticleSave);
         ImageView addPhotoImageView = (ImageView)articleWritingView.findViewById(R.id.writingArticleAddPhotos);
         final EditText articleTitleEditText = (EditText)articleWritingView.findViewById(R.id.writingArticleTitle);
@@ -51,29 +46,12 @@ public class ArticleWritten extends Fragment {
                 /*saveImageView.setVisibility(View.INVISIBLE);
                 saveImageView.setVisibility(View.VISIBLE);*/
                 saveImageView.setAlpha(100);
-                //articleContentEditText.setText(articleTitleEditText.getText().toString());
-                /*if(articleTitleEditText.getText().toString() == ""){
+                articleContentEditText.setText(articleTitleEditText.getText().toString());
+                if(articleTitleEditText.getText().toString() == null){
                     Toast.makeText(getActivity(), "Please Input Article Title",
                             Toast.LENGTH_SHORT).show();
                     saveImageView.setAlpha(255);
-                }*/
-                wArticle.setArticleTitle(articleTitleEditText.getText().toString());
-                wArticle.setArticleContent(articleContentEditText.getText().toString());
-                getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleTitleItem()).addToBackStack(null).commit();
-            }
-
-        });
-
-        addPhotoImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                /* 开启Pictures画面Type设定为image */
-                intent.setType("image/*");
-                /* 使用Intent.ACTION_GET_CONTENT这个Action */
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                /* 取得相片后返回本画面 */
-                startActivityForResult(intent, 1);
+                }
             }
         });
 
