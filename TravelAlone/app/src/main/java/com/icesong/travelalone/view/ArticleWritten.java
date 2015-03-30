@@ -23,7 +23,10 @@ import com.icesong.travelalone.model.Articles;
 public class ArticleWritten extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+<<<<<<< HEAD
     MainActivity mainActivity;
+=======
+>>>>>>> origin/prototype
     Articles newArticle = new Articles();
 
     public ArticleWritten() {
@@ -57,10 +60,14 @@ public class ArticleWritten extends Fragment {
                             Toast.LENGTH_SHORT).show();
                     saveImageView.setAlpha(255);
                 }else{
+<<<<<<< HEAD
                     newArticle.setmArticleName(articleTitleEditText.getText().toString());
                     newArticle.setmArticleContent(articleContentEditText.getText().toString());
                     mainActivity.setArticleDataList(newArticle);
                     getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleTitleItem()).addToBackStack(null).commit();
+=======
+
+>>>>>>> origin/prototype
                 }
 
             }
