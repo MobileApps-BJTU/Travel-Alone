@@ -42,8 +42,6 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
                 new int[]{R.id.article_item_list_title, R.id.article_item_list_detail, R.id.article_item_list_origin,
                         R.id.article_item_list_author, R.id.article_item_list_comments, R.id.imageView});
-
-        articleDataList = new ArrayList<Map<String, Object>>();
     }
 
 
@@ -85,57 +83,37 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
     @Override
     public void OpenArticleDetailRead(int position) {
-        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleDetailRead().newInstance()).addToBackStack(null).commit();
+        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleDetailRead().newInstance(position)).addToBackStack(null).commit();
         //getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
     }
 
-<<<<<<< HEAD
-    public List<Map<String,Object>> getData() {
-        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-=======
-    public List<Map<String, Object>> getArticleDataList() {
->>>>>>> origin/prototype
-
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("title", "article1");
-        map.put("content", "content1");
-        map.put("origin", "origin1");
-        map.put("author", "author1");
-        map.put("comment", "comment1");
-        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_000);
-<<<<<<< HEAD
-        list.add(map);
-=======
-        articleDataList.add(map);
->>>>>>> origin/prototype
-
-        map = new HashMap<String, Object>();
-        map.put("title", "article2");
-        map.put("content", "content2");
-        map.put("origin", "origin2");
-        map.put("author", "author2");
-        map.put("comment", "comment2");
-        map.put("img", R.drawable.abc_btn_radio_material);
-<<<<<<< HEAD
-        list.add(map);
-=======
-        articleDataList.add(map);
->>>>>>> origin/prototype
-
-        map = new HashMap<String, Object>();
-        map.put("title", "article3");
-        map.put("content", "content3");
-        map.put("origin", "origin3");
-        map.put("author", "author3");
-        map.put("comment", "comment3");
-        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_015);
-<<<<<<< HEAD
-        list.add(map);
-
-        return list;
-
-=======
-        articleDataList.add(map);
+    public List<Map<String, Object>> getArticleDataList(){
+//        Map<String, Object> map = new HashMap<String, Object>();
+//        map.put("title", "article1");
+//        map.put("content", "content1");
+//        map.put("origin", "origin1");
+//        map.put("author", "author1");
+//        map.put("comment", "comment1");
+//        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_000);
+//        articleDataList.add(map);
+//
+//        map = new HashMap<String, Object>();
+//        map.put("title", "article2");
+//        map.put("content", "content2");
+//        map.put("origin", "origin2");
+//        map.put("author", "author2");
+//        map.put("comment", "comment2");
+//        map.put("img", R.drawable.abc_btn_radio_material);
+//        articleDataList.add(map);
+//
+//        map = new HashMap<String, Object>();
+//        map.put("title", "article3");
+//        map.put("content", "content3");
+//        map.put("origin", "origin3");
+//        map.put("author", "author3");
+//        map.put("comment", "comment3");
+//        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_015);
+//        articleDataList.add(map);
 
         return articleDataList;
     }
@@ -150,6 +128,5 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         map.put("img", R.drawable.abc_btn_check_to_on_mtrl_000);
 
         articleDataList.add(map);
->>>>>>> origin/prototype
     }
 }
