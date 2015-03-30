@@ -79,38 +79,43 @@
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/write_comments"
-            android:src="@drawable/writeComments"
-            android:layout_weight="1" />
+
+            android:layout_weight="1"
+            android:src="@drawable/write_comments" />
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/read_comments"
-            android:src="@drawable/comments"
-            android:layout_weight="1" />
+
+            android:layout_weight="1"
+            android:src="@drawable/comments" />
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/share_article"
-            android:src="@drawable/shareArticle"
-            android:layout_weight="1" />
+
+            android:layout_weight="1"
+            android:src="@drawable/share_article" />
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/collection_article"
-            android:src="@drawable/collectionIcan"
-            android:layout_weight="1" />
+
+            android:layout_weight="1"
+            android:src="@drawable/collection_ican" />
 
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/report_article"
-            android:src="@drawable/juBao"
-            android:layout_weight="1" />
+
+            android:layout_weight="1"
+            android:src="@drawable/report_ican" />
 
     </TableRow>
 

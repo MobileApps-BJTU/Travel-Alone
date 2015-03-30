@@ -18,4 +18,36 @@ public class Articles {
     private int mArticleLike; //number of people who like this article
     private int mArticleDislike; //number of people who dislike this article
     private ArticleComment[] mArticleComments;  //the comments of this article
+
+    public int getArticleId(){
+        return mArticleId;
+    }
+
+    public String getArticleName(){
+        return mArticleName;
+    }
+
+    public String getArticleAuthor(){
+        return mArticleAuthor;
+    }
+
+    public Date getArticleData(){
+        return mArticleData;
+    }
+
+    public String getArticlePosition(){
+        return mArticlePosition;
+    }
+
+    public String getArticleContent(){
+        return mArticleContent;
+    }
+
+    public void setArticleContent(String name){
+        mArticleName = name;
+    }
+
+    public void setArticleTitle(String name){
+        mArticleName = name;
+    }
 }
