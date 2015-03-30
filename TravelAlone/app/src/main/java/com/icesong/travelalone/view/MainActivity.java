@@ -90,40 +90,41 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
     @Override
     public void OpenArticleDetailRead(int position) {
-        //getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleDetailRead().newInstance(d,a)).addToBackStack(null).commit();
-        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
+        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleDetailRead().newInstance()).addToBackStack(null).commit();
+        //getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
     }
 
-    public List<Map<String,Object>> getData(){
-        List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
+    public List<Map<String,Object>> getData() {
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
-        Map<String,Object> map = new HashMap<String,Object>();
-        map.put("title","article1");
-        map.put("content","content1");
-        map.put("origin","origin1");
-        map.put("author","author1");
-        map.put("comment","comment1");
-        map.put("img",R.drawable.abc_btn_check_to_on_mtrl_000);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("title", "article1");
+        map.put("content", "content1");
+        map.put("origin", "origin1");
+        map.put("author", "author1");
+        map.put("comment", "comment1");
+        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_000);
         list.add(map);
 
-        map = new HashMap<String,Object>();
-        map.put("title","article2");
-        map.put("content","content2");
-        map.put("origin","origin2");
-        map.put("author","author2");
-        map.put("comment","comment2");
-        map.put("img",R.drawable.abc_btn_radio_material);
+        map = new HashMap<String, Object>();
+        map.put("title", "article2");
+        map.put("content", "content2");
+        map.put("origin", "origin2");
+        map.put("author", "author2");
+        map.put("comment", "comment2");
+        map.put("img", R.drawable.abc_btn_radio_material);
         list.add(map);
 
-        map = new HashMap<String,Object>();
-        map.put("title","article3");
-        map.put("content","content3");
-        map.put("origin","origin3");
-        map.put("author","author3");
-        map.put("comment","comment3");
-        map.put("img",R.drawable.abc_btn_check_to_on_mtrl_015);
+        map = new HashMap<String, Object>();
+        map.put("title", "article3");
+        map.put("content", "content3");
+        map.put("origin", "origin3");
+        map.put("author", "author3");
+        map.put("comment", "comment3");
+        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_015);
         list.add(map);
 
         return list;
+
     }
 }
