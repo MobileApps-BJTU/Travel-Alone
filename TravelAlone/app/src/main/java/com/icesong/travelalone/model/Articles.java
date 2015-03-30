@@ -1,5 +1,7 @@
 package com.icesong.travelalone.model;
 
+import com.icesong.travelalone.R;
+
 import org.w3c.dom.Text;
 
 import java.util.Date;
@@ -14,10 +16,26 @@ public class Articles {
     private Date mArticleData; //article written data
     private String mArticlePosition;//article written position
     private String mArticleContent;//'article content
-    private String[] mArticlephotos; //photos used in article
+    private String mArticlePhotos; //photos used in article
     private int mArticleLike; //number of people who like this article
     private int mArticleDislike; //number of people who dislike this article
     private ArticleComment[] mArticleComments;  //the comments of this article
+    private  String mArticleOrigin;  //
+
+    public Articles(){
+        mArticleId = 1;
+        mArticleName = "new Article";
+        mArticleAuthor = "SongLiu";
+        mArticleContent = "hi, i'm SongLiu!";
+        mArticleData = new Date(System.currentTimeMillis());
+        mArticleLike = 245;
+        mArticleDislike = 123;
+        mArticlePhotos = "R.drawable.abc_btn_check_to_on_mtrl_000";
+        mArticlePosition = "Beijing";
+        mArticleComments = new ArticleComment[0];
+        mArticleOrigin = "Travel alone";
+
+    }
 
     public int getmArticleId() {
         return mArticleId;
@@ -63,14 +81,6 @@ public class Articles {
         this.mArticleContent = mArticleContent;
     }
 
-    public String[] getmArticlephotos() {
-        return mArticlephotos;
-    }
-
-    public void setmArticlephotos(String[] mArticlephotos) {
-        this.mArticlephotos = mArticlephotos;
-    }
-
     public int getmArticleLike() {
         return mArticleLike;
     }
@@ -97,5 +107,19 @@ public class Articles {
 
     public void setmArticleId(int mArticleId) {
         this.mArticleId = mArticleId;
+    }
+
+    public String setArticleOrigin(){
+        return mArticleOrigin;
+    }
+    public void setArticleOrigin(String origin){
+        mArticleOrigin = origin;
+    }
+
+    public String getmArticlePhotos(){
+        return mArticlePhotos;
+    }
+    public void setmArticlePhotos(String photourl){
+        mArticlePhotos = photourl;
     }
 }
