@@ -12,6 +12,7 @@ public class Articles {
     private String mArticleName;//article name
     private String mArticleAuthor;//article author
     private Date mArticleData; //article written data
+    private String mArticlePosition;//article written position
     private String mArticleContent;//'article content
     private String[] mArticlephotos; //photos used in article
     private int mArticleLike; //number of people who like this article

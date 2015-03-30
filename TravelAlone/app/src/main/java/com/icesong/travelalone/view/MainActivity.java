@@ -1,5 +1,6 @@
 package com.icesong.travelalone.view;
 
+import android.app.Activity;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.view.MenuItem;
 import com.icesong.travelalone.R;
 
 
-public class MainActivity extends ActionBarActivity  implements ArticleTitleItem.OnFragmentInteractionListener{
+public class MainActivity extends Activity implements ArticleTitleItem.OnFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +46,23 @@ public class MainActivity extends ActionBarActivity  implements ArticleTitleItem
     }
 
     @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
+            getFragmentManager().popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public void onFragmentInteraction(Uri uri) {
 
     }
 
     @Override
     public void OpenArticleDetailRead(int position) {
-
+        String d = "d";
+        String a = "d";
+        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleDetailRead().newInstance(d,a)).addToBackStack(null).commit();
     }
 }

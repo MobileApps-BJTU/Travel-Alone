@@ -57,7 +57,6 @@ public class ArticleTitleItem extends ListFragment {
         }
     }
 
-    @Override
 
     public void onListItemClick(ListView l,View v,int position,long id) {
         if (mListener != null) {

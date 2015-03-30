@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 
 import com.icesong.travelalone.R;
 
-
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ArticleDetailRead#newInstance} factory method to
