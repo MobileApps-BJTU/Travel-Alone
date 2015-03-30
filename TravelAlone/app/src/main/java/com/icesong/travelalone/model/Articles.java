@@ -30,7 +30,7 @@ public class Articles {
         mArticleData = new Date(System.currentTimeMillis());
         mArticleLike = 245;
         mArticleDislike = 123;
-        mArticlePhotos = "R.drawable.abc_btn_check_to_on_mtrl_000";
+        mArticlePhotos = "R.";
         mArticlePosition = "Beijing";
         mArticleComments = new ArticleComment[0];
         mArticleOrigin = "Travel alone";
