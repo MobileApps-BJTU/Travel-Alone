@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.icesong.travelalone.R;
+import com.icesong.travelalone.model.Articles;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +23,7 @@ import com.icesong.travelalone.R;
 public class ArticleWritten extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    Articles newArticle = new Articles();
 
     public ArticleWritten() {
         // Required empty public constructor
@@ -43,15 +45,19 @@ public class ArticleWritten extends Fragment {
         saveImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*saveImageView.setVisibility(View.INVISIBLE);
-                saveImageView.setVisibility(View.VISIBLE);*/
                 saveImageView.setAlpha(100);
-                articleContentEditText.setText(articleTitleEditText.getText().toString());
-                if(articleTitleEditText.getText().toString() == null){
+                if(articleTitleEditText.getText() == null){
                     Toast.makeText(getActivity(), "Please Input Article Title",
                             Toast.LENGTH_SHORT).show();
                     saveImageView.setAlpha(255);
+                }else if(articleContentEditText.getText() == null){
+                    Toast.makeText(getActivity(), "Please Input Article Content",
+                            Toast.LENGTH_SHORT).show();
+                    saveImageView.setAlpha(255);
+                }else{
+
                 }
+
             }
         });
 
