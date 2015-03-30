@@ -19,11 +19,10 @@ import java.util.Map;
 import java.util.Stack;
 
 
-public class MainActivity extends Activity implements ArticleTitleItem.OnFragmentInteractionListener, ArticleWritten.OnFragmentInteractionListener{
+public class MainActivity extends Activity implements ArticleTitleItem.OnFragmentInteractionListener, ArticleWritten.OnFragmentInteractionListener {
 
-    Stack<Articles> articleStack;
-    ArrayAdapter<Articles> articlesArrayAdapter;
     private SimpleAdapter adapter;
+    List<Map<String, Object>> articleDataList = new ArrayList<Map<String, Object>>();
 
     public SimpleAdapter getAdapter() {
         return adapter;
@@ -37,18 +36,14 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         getFragmentManager().beginTransaction()
                 .add(R.id.fragment_holder, new ArticleTitleItem()).commit();
 
-        articleStack = new Stack<Articles>();
-        articlesArrayAdapter = new ArrayAdapter<Articles>(
-                this, R.layout.article_item_list,R.id.article_item_list_title,articleStack
-        );
+        adapter = new SimpleAdapter(this, getArticleDataList(), R.layout.article_item_list,
 
-        adapter = new SimpleAdapter(this,getData(),R.layout.article_item_list,
+                new String[]{"title", "content", "origin", "author", "comment", "img"},
 
-                new String[]{"title","content","origin","author","comment","img"},
+                new int[]{R.id.article_item_list_title, R.id.article_item_list_detail, R.id.article_item_list_origin,
+                        R.id.article_item_list_author, R.id.article_item_list_comments, R.id.imageView});
 
-                new int[]{R.id.article_item_list_title,R.id.article_item_list_detail,R.id.article_item_list_origin,
-                        R.id.article_item_list_author,R.id.article_item_list_comments,R.id.imageView });
-
+        articleDataList = new ArrayList<Map<String, Object>>();
     }
 
 
@@ -94,36 +89,47 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
     }
 
-    public List<Map<String,Object>> getData(){
-        List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
+    public List<Map<String, Object>> getArticleDataList() {
 
-        Map<String,Object> map = new HashMap<String,Object>();
-        map.put("title","article1");
-        map.put("content","content1");
-        map.put("origin","origin1");
-        map.put("author","author1");
-        map.put("comment","comment1");
-        map.put("img",R.drawable.abc_btn_check_to_on_mtrl_000);
-        list.add(map);
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("title", "article1");
+        map.put("content", "content1");
+        map.put("origin", "origin1");
+        map.put("author", "author1");
+        map.put("comment", "comment1");
+        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_000);
+        articleDataList.add(map);
 
-        map = new HashMap<String,Object>();
-        map.put("title","article2");
-        map.put("content","content2");
-        map.put("origin","origin2");
-        map.put("author","author2");
-        map.put("comment","comment2");
-        map.put("img",R.drawable.abc_btn_radio_material);
-        list.add(map);
+        map = new HashMap<String, Object>();
+        map.put("title", "article2");
+        map.put("content", "content2");
+        map.put("origin", "origin2");
+        map.put("author", "author2");
+        map.put("comment", "comment2");
+        map.put("img", R.drawable.abc_btn_radio_material);
+        articleDataList.add(map);
 
-        map = new HashMap<String,Object>();
-        map.put("title","article3");
-        map.put("content","content3");
-        map.put("origin","origin3");
-        map.put("author","author3");
-        map.put("comment","comment3");
-        map.put("img",R.drawable.abc_btn_check_to_on_mtrl_015);
-        list.add(map);
+        map = new HashMap<String, Object>();
+        map.put("title", "article3");
+        map.put("content", "content3");
+        map.put("origin", "origin3");
+        map.put("author", "author3");
+        map.put("comment", "comment3");
+        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_015);
+        articleDataList.add(map);
 
-        return list;
+        return articleDataList;
+    }
+
+    public void setArticleDataList(Articles anArticle){
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("title", "articl23131e1");
+        map.put("content", "cont121313ent1");
+        map.put("origin", "origin1");
+        map.put("author", "author1");
+        map.put("comment", "comment1");
+        map.put("img", R.drawable.abc_btn_check_to_on_mtrl_000);
+
+        articleDataList.add(map);
     }
 }
