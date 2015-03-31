@@ -54,13 +54,8 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
                 new int[]{R.id.article_item_list_title, R.id.article_item_list_detail, R.id.article_item_list_origin,
                         R.id.article_item_list_author, R.id.article_item_list_comments, R.id.imageView});
-<<<<<<< HEAD
-       // setUpViews();
+
         setUpMenu();
-=======
-
-
->>>>>>> origin/prototype
     }
 
 
@@ -122,7 +117,7 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         articleDataList.add(map);
     }
 
-    //init slide menu
+    //init slide menu and set menu functions
     private void setUpMenu() {
         // attach to current activity;
         resideMenu = new ResideMenu(this);
