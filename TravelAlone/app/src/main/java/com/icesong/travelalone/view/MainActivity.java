@@ -35,6 +35,10 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         return adapter;
     }
 
+    private final String IMAGE_TYPE = "image/*";
+
+    private final int IMAGE_CODE = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,12 +50,17 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
 
         adapter = new SimpleAdapter(this, getArticleDataList(), R.layout.article_item_list,
 
-                new String[]{"title", "content", "origin", "author", "comment", "img"},
+                new String[]{"title", "content", "origin", "author", "comment", "pic"},
 
                 new int[]{R.id.article_item_list_title, R.id.article_item_list_detail, R.id.article_item_list_origin,
                         R.id.article_item_list_author, R.id.article_item_list_comments, R.id.imageView});
+<<<<<<< HEAD
        // setUpViews();
         setUpMenu();
+=======
+
+
+>>>>>>> origin/prototype
     }
 
 
@@ -109,7 +118,7 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         map.put("author", anArticle.getmArticleAuthor());
         map.put("comment", anArticle.getmArticleComments().length);
         map.put("img", anArticle.getmArticlePhotos());
-
+        map.put("pic",anArticle.getPath());
         articleDataList.add(map);
     }
 

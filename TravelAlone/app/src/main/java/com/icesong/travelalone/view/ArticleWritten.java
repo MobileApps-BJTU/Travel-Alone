@@ -1,9 +1,14 @@
 package com.icesong.travelalone.view;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +18,11 @@ import android.widget.Toast;
 
 import com.icesong.travelalone.R;
 import com.icesong.travelalone.model.Articles;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,11 +35,15 @@ public class ArticleWritten extends Fragment {
     private OnFragmentInteractionListener mListener;
     MainActivity mainActivity;
     Articles newArticle = new Articles();
+    private static int PHOTO_REQUEST_GALLER = 0;
+    private Uri uri;
+    public final static String SDCARD_MNT = "/mnt/sdcard";
+    public final static String SDCARD = "/sdcard";
+    private String thePath;
 
     public ArticleWritten() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -59,13 +73,58 @@ public class ArticleWritten extends Fragment {
                 }else{
                     newArticle.setmArticleName(articleTitleEditText.getText().toString());
                     newArticle.setmArticleContent(articleContentEditText.getText().toString());
+                    //newArticle.setUri(uri);
+                    newArticle.setPath(thePath);
                     mainActivity.setArticleDataList(newArticle);
                     getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleTitleItem()).addToBackStack(null).commit();
                 }
             }
         });
+
+        addPhotoImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityForResult(intent,PHOTO_REQUEST_GALLER);
+            }
+        });
+       // mainActivity.setArticleDataList(newArticle);
         return articleWritingView;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if (data != null) {
+            uri = data.getData();
+            String thePath = getAbsolutePathFromNoStandardUri(uri);
+            //newArticle.setUri(uri);
+
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public static String getAbsolutePathFromNoStandardUri(Uri mUri) {
+        String filePath = null;
+        String mUriString = mUri.toString();
+        mUriString = Uri.decode(mUriString);
+        String pre1 = "file://" + SDCARD + File.separator;
+        String pre2 = "file://" + SDCARD_MNT + File.separator;
+        if (mUriString.startsWith(pre1)) {
+            filePath = Environment.getExternalStorageDirectory().getPath()
+                    + File.separator + mUriString.substring(pre1.length());
+        } else if (mUriString.startsWith(pre2)) {
+            filePath = Environment.getExternalStorageDirectory().getPath()
+                    + File.separator + mUriString.substring(pre2.length());
+        }
+        return filePath;
+    }
+
+
+
+
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

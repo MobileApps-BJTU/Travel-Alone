@@ -61,12 +61,18 @@
             android:lines="1"
             android:linksClickable="false"
             android:hint="Input Article Title" />
-
+        <!--
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/writingArticlePhoto"
             android:layout_gravity="center_horizontal" />
+
+            -->
+        <Gallery
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gallery" />
 
         <EditText
             android:layout_width="match_parent"
@@ -83,6 +89,8 @@
             android:scrollbars="vertical"
             android:textStyle="italic"
             android:hint="You Article" />
+
+
     </LinearLayout>
 
 </FrameLayout>
