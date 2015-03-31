@@ -9,11 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import com.icesong.travelalone.R;
 import com.icesong.travelalone.model.Articles;
+import com.icesong.travelalone.view.menu.ResideMenu;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,7 +53,16 @@ public class ArticleTitleItem extends ListFragment {
         setListAdapter(mainActivity.getAdapter());
 //        setListAdapter((MainActivity)getActivity().get);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_article_title_item, container, false);
+        View articleItemView =  inflater.inflate(R.layout.fragment_article_title_item, container, false);
+        final ResideMenu resideMenu = mainActivity.getResideMenu();
+        ImageView userIcanImageView = (ImageView) articleItemView.findViewById(R.id.userIcanInTitle);
+        userIcanImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                resideMenu.openMenu();
+            }
+        });
+        return  articleItemView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
