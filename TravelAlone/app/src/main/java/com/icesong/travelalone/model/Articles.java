@@ -1,9 +1,13 @@
 package com.icesong.travelalone.model;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
+
 import com.icesong.travelalone.R;
 
 import org.w3c.dom.Text;
 
+import java.net.URI;
 import java.util.Date;
 
 /**
@@ -20,7 +24,37 @@ public class Articles {
     private int mArticleLike; //number of people who like this article
     private int mArticleDislike; //number of people who dislike this article
     private ArticleComment[] mArticleComments;  //the comments of this article
-    private  String mArticleOrigin;  //
+    private  String mArticleOrigin;
+    private String path;
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
+
+    private Bitmap bitmap;
+
+    public Uri getUri() {
+        return uri;
+    }
+
+    public void setUri(Uri uri) {
+        this.uri = uri;
+    }
+
+    private Uri uri;
+
 
     public Articles(){
         mArticleId = 1;
