@@ -1,13 +1,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.icesong.travelalone.view.ArticleWritten">
+    tools:context="com.icesong.travelalone.view.ArticleWritten"
+    android:background="@android:color/background_light">
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="40dp"
         android:layout_gravity="top"
-        android:background="#2626a0c9">
+        android:background="@android:color/holo_green_light">
 
         <ImageView
             android:id="@+id/writingArticleSave"
@@ -17,7 +18,7 @@
             android:layout_alignParentRight="false"
             android:layout_alignParentStart="false"
             android:layout_centerVertical="true"
-            android:src="@drawable/save_article"
+            android:src="@drawable/ican_right"
             android:layout_marginLeft="10dp" />
 
         <TextView
@@ -27,7 +28,8 @@
             android:layout_centerInParent="true"
             android:layout_gravity="right"
             android:text="Trave Alone"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:textColor="@android:color/background_light" />
 
         <ImageView
             android:id="@+id/writingArticleAddPhotos"
@@ -37,7 +39,7 @@
             android:layout_alignParentStart="false"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:src="@drawable/add_photos"
+            android:src="@drawable/ican_plus"
             android:focusable="false" />
 
     </RelativeLayout>
@@ -60,7 +62,9 @@
             android:layout_marginRight="10dp"
             android:lines="1"
             android:linksClickable="false"
-            android:hint="Input Article Title" />
+            android:background="@null"
+            android:hint="Input Article Title"
+            android:focusable="true" />
         <!--
         <ImageView
             android:layout_width="wrap_content"
@@ -69,6 +73,14 @@
             android:layout_gravity="center_horizontal" />
 
             -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text"
+            android:id="@+id/textView3"
+            android:background="#ffd4d4d4" />
+
         <Gallery
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,7 +99,7 @@
             android:minLines="100"
             android:maxLines="150"
             android:scrollbars="vertical"
-            android:textStyle="italic"
+            android:background="@null"
             android:hint="You Article" />
 
 

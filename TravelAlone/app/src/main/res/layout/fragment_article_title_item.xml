@@ -17,7 +17,7 @@
             android:layout_width="fill_parent"
             android:layout_height="40dp"
             android:layout_gravity="top"
-            android:background="#2626a0c9">
+            android:background="@android:color/holo_green_light">
 
             <ImageView
                 android:id="@+id/userIcanInTitle"
@@ -27,7 +27,7 @@
                 android:layout_alignParentRight="false"
                 android:layout_alignParentStart="false"
                 android:layout_centerVertical="true"
-                android:src="@drawable/logo_1"
+                android:src="@drawable/log_2"
                 android:layout_marginLeft="10dp" />
 
             <TextView
@@ -39,7 +39,7 @@
                 android:layout_toEndOf="@id/userIcanInTitle"
                 android:text="20"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#ffff1b0a" />
+                android:textColor="@android:color/holo_red_light" />
 
             <TextView
                 android:id="@+id/textView"
@@ -48,7 +48,8 @@
                 android:layout_centerInParent="true"
                 android:layout_gravity="right"
                 android:text="Trave Alone"
-                android:textSize="30dp" />
+                android:textSize="30dp"
+                android:textColor="@android:color/background_light" />
 
             <ImageView
                 android:id="@+id/imageButton"
@@ -58,7 +59,7 @@
                 android:layout_alignParentStart="false"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
-                android:src="@drawable/select_search" />
+                android:src="@drawable/ican_search" />
         </RelativeLayout>
 
         <ListView

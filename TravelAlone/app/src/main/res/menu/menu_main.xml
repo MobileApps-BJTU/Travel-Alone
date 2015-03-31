@@ -47,6 +47,6 @@
             android:layout_alignParentStart="false"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:src="@drawable/select_search" />
+            android:src="@drawable/ican_search" />
     </RelativeLayout>
 </menu>

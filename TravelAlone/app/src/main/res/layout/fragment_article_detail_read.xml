@@ -1,121 +1,138 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.icesong.travelalone.view.ArticleDetailRead"
-    android:background="#ffffffff">
+    android:background="#ffffffff"
+    tools:context="com.icesong.travelalone.view.ArticleDetailRead">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
-        android:layout_width="match_parent"
         android:id="@+id/title_detail_read"
-        android:background="#2626a0c9"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignParentTop="true"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:background="@android:color/holo_green_light">
 
         <TextView
+            android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Travel Alone"
-            android:id="@+id/textView8"
-            android:layout_alignParentTop="false"
-            android:layout_alignParentStart="false"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:text="Travel Alone"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/background_light" />
 
         <TextView
+            android:id="@+id/article_detail_position"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Beijing"
-            android:id="@+id/article_detail_position"
             android:layout_alignParentBottom="false"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:text="Beijing"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/background_light" />
     </RelativeLayout>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text=""
-            android:id="@+id/read_title"
-            android:layout_gravity="center" />
 
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/read_image"
-            android:layout_gravity="center"
-             />
+            android:layout_gravity="top"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:id="@+id/read_context"
-            android:layout_marginLeft="12dp" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/read_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <ImageView
+                android:id="@+id/read_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/read_context"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:text="" />
+        </LinearLayout>
+
+    </ScrollView>
 
     <TableRow
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="-8dp"
-        android:background="#ffd6d7d7">
+        android:background="#ffe8e8e8"
+        android:baselineAligned="true"
+        android:theme="@android:style/Theme.Light.Panel">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+        <ImageView
             android:id="@+id/write_comments"
-
-            android:layout_weight="1"
-            android:src="@drawable/write_comments" />
-
-        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/write_comments"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp" />
+
+        <ImageView
             android:id="@+id/read_comments"
-
-            android:layout_weight="1"
-            android:src="@drawable/comments" />
-
-        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginTop="7dp"
+            android:layout_weight="1"
+            android:src="@drawable/read_comments"
+            android:layout_marginBottom="2dp" />
+
+        <ImageView
             android:id="@+id/share_article"
-
-            android:layout_weight="1"
-            android:src="@drawable/share_article" />
-
-        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/share_article"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp" />
+
+        <ImageView
             android:id="@+id/collection_article"
-
-            android:layout_weight="1"
-            android:src="@drawable/collection_ican" />
-
-        <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/report_article"
-
             android:layout_weight="1"
-            android:src="@drawable/report_ican" />
+            android:src="@drawable/collection_article"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp" />
+
+        <ImageView
+            android:id="@+id/report_article"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/report_article"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="2dp" />
 
     </TableRow>
 
