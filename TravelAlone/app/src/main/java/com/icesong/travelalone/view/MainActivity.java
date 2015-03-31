@@ -46,7 +46,7 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         mContext = this;
 
         getFragmentManager().beginTransaction()
-                .add(R.id.fragment_holder, new ArticleWritten()).commit();
+                .add(R.id.fragment_holder, new ArticleTitleItem()).commit();
 
         adapter = new SimpleAdapter(this, getArticleDataList(), R.layout.article_item_list,
 
@@ -126,7 +126,7 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         resideMenu.setMenuListener(menuListener);
 
         // create menu items;
-        String titles[] = { "Write", "Articles", "Collections", "Location", "Map" };
+        String titles[] = { "Write", "Articles", "Coll", "Location", "Map" };
         int icon[] = { R.drawable.icon_write, R.drawable.ican_article, R.drawable.ican_collection, R.drawable.ican_report,R.drawable.ican_map };
 
         for(int i=0;i<titles.length;i++){
@@ -140,11 +140,18 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
                         getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
                     }else if(menuFlag == 1){
                         resideMenu.closeMenu();
-                        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
+                        //getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
                     }else if(menuFlag == 2){
                         resideMenu.closeMenu();
-                        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
-                    }else{
+                        //getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new ArticleWritten()).addToBackStack(null).commit();
+                    }else if(menuFlag == 3){
+                        resideMenu.closeMenu();
+                        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new LocationReport()).addToBackStack(null).commit();
+                    }else if(menuFlag == 4){
+                        resideMenu.closeMenu();
+                        getFragmentManager().beginTransaction().replace(R.id.fragment_holder, new FragmentMap()).addToBackStack(null).commit();
+                    }
+                    else{
                         resideMenu.closeMenu();
                     }
                 }
