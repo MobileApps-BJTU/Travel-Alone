@@ -126,7 +126,7 @@ public class MainActivity extends Activity implements ArticleTitleItem.OnFragmen
         resideMenu.setMenuListener(menuListener);
 
         // create menu items;
-        String titles[] = { "Write", "Articles", "Coll", "Location", "Map" };
+        int titles[] = { R.string.Write, R.string.Articles, R.string.Coll, R.string.Location, R.string.Map };
         int icon[] = { R.drawable.icon_write, R.drawable.ican_article, R.drawable.ican_collection, R.drawable.ican_report,R.drawable.ican_map };
 
         for(int i=0;i<titles.length;i++){

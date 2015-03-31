@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Comments:"
+                android:text="@string/Comment"
                 android:layout_toRightOf="@+id/article_item_list_author"
                 android:id="@+id/textView4"
                 android:layout_marginLeft="10dp" />

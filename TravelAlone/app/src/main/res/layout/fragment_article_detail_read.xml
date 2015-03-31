@@ -24,7 +24,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Travel Alone"
+            android:text="@string/app_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/background_light" />
 
@@ -38,7 +38,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:text="Beijing"
+            android:text="@string/position"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@android:color/background_light" />
     </RelativeLayout>
