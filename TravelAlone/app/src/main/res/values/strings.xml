@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Travel Alone</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Comment">Comments;</string>
+    <string name="position">Beijing</string>
+    <string name="InputArticleTitle">Input Article Title</string>
+    <string name="YouArticle">You Article</string>
+    <string name="Target">Target</string>
+    <string name="Phone">Phone</string>
+    <string name="Message">Message</string>
+    <string name="Switch">Switch</string>
+    <string name="Write">Write</string>
+    <string name="Articles">Articles</string>
+    <string name="Coll">Coll</string>
+    <string name="Location">Location</string>
+    <string name="Map">Map</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
