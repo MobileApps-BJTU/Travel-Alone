@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">旅行日记</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">设置</string>
+    <string name="Comment">评论;</string>
+    <string name="position">北京</string>
+    <string name="InputArticleTitle">输入文章标题</string>
+    <string name="YouArticle">输入文章内容</string>
+    <string name="Target">监护人</string>
+    <string name="Phone">电话号码</string>
+    <string name="Message">信息</string>
+    <string name="Switch">授权</string>
+    <string name="Write">新建文章</string>
+    <string name="Articles">我的游记</string>
+    <string name="Coll">我的收藏</string>
+    <string name="Location">我的位置</string>
+    <string name="Map">足迹</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
